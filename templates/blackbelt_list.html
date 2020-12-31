@@ -1,0 +1,25 @@
+{% extends "requirements/templates/requirements/base.html"}
+
+{% block title %}Black Belts{% endblock title %}
+
+
+
+{% block content %}
+    <h1>Instructors</h1><br><br>
+
+    {% for object in object_list %}
+        {% if object.instructor_bio != ""}
+            {{ object }}<br><br>
+        {% endif %}
+    {% endfor %}
+
+    <h1>Ranked Black Belts</h1><br><br>
+
+    {% for object in object_list %}
+        {% if object.instructor_bio == ""}
+            {{ object }}<br><br>
+        {% endif %}
+    {% endfor %}
+
+
+{% endblock content %}
