@@ -1,17 +1,19 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Black Belts{% endblock title %}
-
-
 
 {% block content %}
     <h1>Instructors</h1>
 
     {% for object in object_list %}
         {% if object.instructor_bio != "" %}
-            {{ object }}<br><br>
+            <div id="instructor" style="float: left;">
+                <img src="{% static object.image_url %}" alt="" width=125 height=125 /><br>
+                {{ object }}
+            </div>
         {% endif %}
-    {% endfor %}
+    {% endfor %}<br style="clear: both;">
 
     <h1>Ranked Black Belts</h1>
 
