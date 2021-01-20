@@ -8,9 +8,9 @@
 
     {% for object in object_list %}
         {% if object.instructor_bio != "" %}
-            <div id="instructor" style="float: left;">
+            <div id="instructor">
                 <img src="{% static object.image_url %}" alt="" width=125 height=125 /><br>
-                {{ object }}
+                <a href="{{ object.id }}">{{ object }}</a>
             </div>
         {% endif %}
     {% endfor %}<br style="clear: both;">
@@ -19,7 +19,7 @@
 
     {% for object in object_list %}
         {% if object.instructor_bio == "" %}
-            {{ object }}<br><br>
+            <a id="blackbelts">{{ object }}</a>
         {% endif %}
     {% endfor %}
 
