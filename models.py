@@ -1,8 +1,20 @@
 from django.db import models
 
+PREFIX_CHOICES = (
+    ('Kwan Jang Nim', 'kjn'),
+    ('Sa Bum Nim', 'sbn'),
+    ('Kyo Sa Nim', 'ksn'),
+    ('Mr.', 'mr'),
+    ('Ms.', 'ms'),
+    ('', '')
+)
+
 # Create your models here.
 class BlackBelt (models.Model):
-    prefix          = models.CharField(max_length = 10)
+    prefix          = models.CharField(
+        choices = PREFIX_CHOICES,
+        default = '',
+        max_length = 20)
     first_name      = models.CharField(max_length = 20)
     last_name       = models.CharField(max_length = 20)
     rank            = models.CharField(max_length = 20)
