@@ -4,7 +4,7 @@
 {% block title %}{{ object }}{% endblock title %}
 
 {% block content %}
-    <h1>{{ object }}</h1>
+    <h1>{{ object.prefix }}{{ object }}</h1>
     <img src="{% static object.image_url %}" alt="" width=125 height=125 /><br>
     {{ object.instructor_bio }}
 

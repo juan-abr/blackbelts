@@ -7,13 +7,43 @@
     <h1>Instructors</h1>
 
     {% for object in object_list %}
-        {% if object.instructor_bio != "" %}
+        {% if object.instructor_bio != "" and object.prefix == "Kwan Jang Nim" %}
             <div id="instructor">
                 <img src="{% static object.image_url %}" alt="" width=125 height=125 /><br>
                 <a href="{{ object.id }}">{{ object }}</a>
             </div>
         {% endif %}
-    {% endfor %}<br style="clear: both;">
+    {% endfor %}<!--br style="clear: both;"-->
+
+    {% for object in object_list %}
+        {% if object.instructor_bio != "" and object.prefix == "Sa Bum Nim" %}
+            <div id="instructor">
+                <img src="{% static object.image_url %}" alt="" width=125 height=125 /><br>
+                <a href="{{ object.id }}">{{ object }}</a>
+            </div>
+        {% endif %}
+    {% endfor %}
+    
+    {% for object in object_list %}
+        {% if object.instructor_bio != "" and object.prefix == "Kyo Sa Nim" %}
+            <div id="instructor">
+                <img src="{% static object.image_url %}" alt="" width=125 height=125 /><br>
+                <a href="{{ object.id }}">{{ object }}</a>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    {% for object in object_list %}
+        {% if object.instructor_bio != "" %}
+            {% if object.prefix != "Kwan Jang Nim" and object.prefix != "Sa Bum Nim" and object.prefix != "Kyo Sa Nim" %}
+                <div id="instructor">
+                    <img src="{% static object.image_url %}" alt="" width=125 height=125 /><br>
+                    <a href="{{ object.id }}">{{ object }}</a>
+                </div>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    <br style="clear: both;">
 
     <h1>Ranked Black Belts</h1>
 
