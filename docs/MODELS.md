@@ -15,3 +15,5 @@ blackbelts
 
 
 tab order (too look at)
+
+need to add better organization to instructor lists. (i.e. positional fields)
