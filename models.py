@@ -9,6 +9,9 @@ PREFIX_CHOICES = (
     ('', '')
 )
 
+# Add Meta Class
+# Add Date of birth???
+
 # Create your models here.
 class BlackBelt (models.Model):
     prefix          = models.CharField(

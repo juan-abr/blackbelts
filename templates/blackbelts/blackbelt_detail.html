@@ -1,7 +1,8 @@
 {% extends "base_blackbelts.html" %}
 {% load static %}
 
-{% block title %}{{ object }}{% endblock title %}
+{% block description %}{{ object.instructor_bio }}{% endblock description %}
+{% block twitter_card %}{{ object.instructor_bio }}{% endblock twitter_card %}
 
 {% block content %}
     <h1>{{ object.prefix }}{{ object }}</h1>
