@@ -9,9 +9,6 @@ PREFIX_CHOICES = (
     ('', '')
 )
 
-# Add Meta Class
-# Add Date of birth???
-
 # Create your models here.
 class BlackBelt (models.Model):
     prefix          = models.CharField(
@@ -20,9 +17,14 @@ class BlackBelt (models.Model):
         max_length = 20)
     first_name      = models.CharField(max_length = 20)
     last_name       = models.CharField(max_length = 20)
+    birthday        = models.DateField(blank=True)
     rank            = models.CharField(max_length = 20)
+    rank_received   = models.DateField(blank=True)
     instructor_bio  = models.TextField(blank = True)
     image_url       = models.CharField(max_length = 20, blank = True)
+
+    class Meta:
+        ordering = ['prefix', 'rank', 'birthday', 'rank_received', 'last_name']
 
     def __str__(self):
         return self.first_name + " " + self.last_name

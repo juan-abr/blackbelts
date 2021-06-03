@@ -1,3 +1,6 @@
+{# ADD META CLASS TO MODEL #}
+{# ADD DATE OF BIRTH TO MODEL?? #}
+
 {% extends "base_blackbelts.html" %}
 {% load static %}
 
@@ -5,6 +8,7 @@
 
 {% block og_title %}Black Belts - {% endblock og_title %}
 {% block description %}Instructors and students that have been decorated as black belts within Central Maryland Martial Arts.{% endblock description %}
+{% block og_url %}{% url 'black_belt_list_view' %}{% endblock og_url %}
 {% block twitter_card %}Instructors and students that have been decorated as black belts within Central Maryland Martial Arts.{% endblock twitter_card %}
 
 {% block content %}
